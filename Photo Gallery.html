@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0c0f13;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 75px;
+            background-color: #0c0f13;
+            box-shadow: 0 4px 6px #fff(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            color: #fff;
+            font-family: 'Brush Script MT', cursive;
+        }
+        nav {
+            text-align: center;
+            margin: 10px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #e6eef8;
+            font-weight: bold;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .photo-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .photo-card:hover {
+            transform: scale(1.03);
+        }
+        .photo-card img {
+            width: 100%;
+            display: block;
+        }
+        .photo-card .caption {
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #0c0f13;
+            margin-top: 20px;
+            box-shadow: 0 -2px 4px #ffd700 (0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Photo Gallery</h1>
+    <nav>
+        <a href="Portfolio.html">Home</a>
+        <a href="#">Gallery</a>
+        <a href="Portfolio.html">Contact</a>
+    </nav>
+</header>
+
+<div class="gallery" id="gallery">
+    <!-- Photos will be added here -->
+    <div class="photo-card">
+        <img src="img/miqi Intro as designer.png" alt="Photo 1">
+        <div class="caption">Photo 1 Caption</div>
+    </div>
+    
+    <div class="photo-card">
+        <img src="img/video editing poster.png" alt="Photo 2">
+        <div class="caption">Photo 2 Caption</div>
+    </div>
+
+    <div class="photo-card">
+        <img src="img/Al wish.png" alt="Photo 2">
+        <div class="caption">Photo 2 Caption</div>
+    </div>
+
+    <div class="photo-card">
+        <img src="img/Air Ticket Booking.png" alt="Photo 2">
+        <div class="caption">Photo 2 Caption</div>
+    </div>
+
+    <div class="photo-card">
+        <img src="img/Artboard 2.png" alt="Photo 2">
+        <div class="caption">Photo 2 Caption</div>
+    </div>
+
+    <div class="photo-card">
+        <img src="img/Umrah Visa Booking.png" alt="Photo 2">
+        <div class="caption">Photo 2 Caption</div>
+    </div>
+
+    <div class="photo-card">
+        <img src="img/us project.png" alt="Photo 2">
+        <div class="caption">Photo 2 Caption</div>
+    </div>
+    <!-- Add more photos here -->
+</div>
+
+<footer>
+    &copy; My Photo Gallery
+</footer>
+
+<script>
+    // Optional: dynamically add photos
+    const photos = [
+       
+    ];
+
+    const gallery = document.getElementById('gallery');
+    photos.forEach(photo => {
+        const card = document.createElement('div');
+        card.className = 'photo-card';
+        card.innerHTML = `<img src="${photo.src}" alt="${photo.caption}">
+                          <div class="caption">${photo.caption}</div>`;
+        gallery.appendChild(card);
+    });
+</script>
+
+</body>
+</html>
